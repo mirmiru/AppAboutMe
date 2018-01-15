@@ -119,38 +119,54 @@
         <!--Number Game-->
         <scene sceneID="UhX-9I-Pby">
             <objects>
-                <viewController title="Number Game" id="y57-0b-jlj" sceneMemberID="viewController">
+                <viewController title="Number Game" id="y57-0b-jlj" customClass="NumberGame" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aNF-gg-puZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="6ma-eT-OG0">
-                                <rect key="frame" x="65" y="352" width="244" height="30"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Welcome to the Number Game!  I'm thinking of a number between 0 and 100... Can you guess what it is?" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="tVw-uY-cvI">
+                                <rect key="frame" x="27" y="299" width="320" height="92"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </slider>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="numbers" translatesAutoresizingMaskIntoConstraints="NO" id="mDr-mo-qFZ">
+                                <rect key="frame" x="49" y="115" width="276" height="158"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UV6-Fh-bWg">
-                                <rect key="frame" x="237" y="407" width="70" height="30"/>
+                                <rect key="frame" x="202" y="548" width="105" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="This is it!"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" title="I bet this is it!"/>
+                                <connections>
+                                    <action selector="guessButton:" destination="y57-0b-jlj" eventType="touchUpInside" id="gUF-xM-OZF"/>
+                                </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Use slider to make a guess:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GLe-hn-L8d">
-                                <rect key="frame" x="67" y="313" width="213" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="50" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GLe-hn-L8d">
+                                <rect key="frame" x="67" y="455" width="65" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Welcome to the Number Game! I'm thinking of a number, can you guess what it is?" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="tVw-uY-cvI">
-                                <rect key="frame" x="16" y="113" width="343" height="86"/>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="50" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="6ma-eT-OG0">
+                                <rect key="frame" x="65" y="494" width="244" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
+                                <connections>
+                                    <action selector="sliderChanged:" destination="y57-0b-jlj" eventType="valueChanged" id="izo-lF-q8l"/>
+                                </connections>
+                            </slider>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="Plo-z4-3M3"/>
                     </view>
+                    <connections>
+                        <outlet property="sliderLabel" destination="GLe-hn-L8d" id="FoU-cb-62V"/>
+                        <outlet property="sliderValue" destination="6ma-eT-OG0" id="7Am-rn-umD"/>
+                        <outlet property="textView" destination="tVw-uY-cvI" id="Vgv-WE-a18"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j5Z-b3-PLh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -205,4 +221,7 @@
             <point key="canvasLocation" x="-932" y="-187"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="numbers" width="640" height="426"/>
+    </resources>
 </document>

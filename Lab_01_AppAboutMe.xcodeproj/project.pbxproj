@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A5422EDE200CF2A1005F9F7E /* NumberGame.m in Sources */ = {isa = PBXBuildFile; fileRef = A5422EDD200CF2A1005F9F7E /* NumberGame.m */; };
 		A5D0FC3420093B34008EAD3C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A5D0FC3320093B34008EAD3C /* AppDelegate.m */; };
 		A5D0FC3720093B34008EAD3C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5D0FC3620093B34008EAD3C /* ViewController.m */; };
 		A5D0FC3A20093B34008EAD3C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5D0FC3820093B34008EAD3C /* Main.storyboard */; };
@@ -16,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A5422EDC200CF2A1005F9F7E /* NumberGame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NumberGame.h; sourceTree = "<group>"; };
+		A5422EDD200CF2A1005F9F7E /* NumberGame.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NumberGame.m; sourceTree = "<group>"; };
 		A5D0FC2F20093B34008EAD3C /* Lab_01_AppAboutMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lab_01_AppAboutMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5D0FC3220093B34008EAD3C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A5D0FC3320093B34008EAD3C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -62,6 +65,8 @@
 				A5D0FC3320093B34008EAD3C /* AppDelegate.m */,
 				A5D0FC3520093B34008EAD3C /* ViewController.h */,
 				A5D0FC3620093B34008EAD3C /* ViewController.m */,
+				A5422EDC200CF2A1005F9F7E /* NumberGame.h */,
+				A5422EDD200CF2A1005F9F7E /* NumberGame.m */,
 				A5D0FC3820093B34008EAD3C /* Main.storyboard */,
 				A5D0FC3B20093B34008EAD3C /* Assets.xcassets */,
 				A5D0FC3D20093B34008EAD3C /* LaunchScreen.storyboard */,
@@ -144,6 +149,7 @@
 			files = (
 				A5D0FC3720093B34008EAD3C /* ViewController.m in Sources */,
 				A5D0FC4220093B34008EAD3C /* main.m in Sources */,
+				A5422EDE200CF2A1005F9F7E /* NumberGame.m in Sources */,
 				A5D0FC3420093B34008EAD3C /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
