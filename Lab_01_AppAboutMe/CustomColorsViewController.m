@@ -20,14 +20,6 @@ UIColor *labelColor;
 @property (weak, nonatomic) IBOutlet UIButton *button1;
 @property (weak, nonatomic) IBOutlet UIButton *button2;
 @property (weak, nonatomic) IBOutlet UITextView *textView;
-
-//Color values
-/*
-@property (strong, nonatomic) UIColor *bgColor;
-@property (nonatomic, strong) UIColor *textColor;
-@property (nonatomic, strong) UIColor *buttonColor;
-@property (nonatomic, strong) UIColor *labelColor;
-*/
 @end
 
 @implementation CustomColorsViewController
@@ -84,11 +76,6 @@ UIColor *labelColor;
     buttonColor = [UIColor lightGrayColor];
     textViewColor = bgColor;
     labelColor = [UIColor colorWithRed:0.76 green:0.29 blue:0.30 alpha:1.0];
-    
-    //self.bgColor = [UIColor colorWithRed:0.96 green:0.83 blue:0.83 alpha:1.0];
-    //self.textColor = [UIColor blackColor];
-    //self.buttonColor = [UIColor lightGrayColor];
-    //self.labelColor = [UIColor colorWithRed:0.76 green:0.29 blue:0.30 alpha:1.0];
 }
 
 //Sets variable values to monochrome scheme
@@ -98,13 +85,6 @@ UIColor *labelColor;
     buttonColor = [UIColor whiteColor];
     textViewColor = bgColor;
     labelColor = [UIColor blackColor];
-    
-    /*
-    self.bgColor = [UIColor lightGrayColor];
-    self.textColor = [UIColor darkGrayColor];
-    self.buttonColor = [UIColor whiteColor];
-    self.labelColor = [UIColor blackColor];
-     */
 }
 
 - (void)didReceiveMemoryWarning {

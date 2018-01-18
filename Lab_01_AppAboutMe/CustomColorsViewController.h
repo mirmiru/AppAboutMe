@@ -10,7 +10,6 @@
 
 @interface CustomColorsViewController : UIViewController
 
-//TEST
 @property (nonatomic, strong) UIColor *bgColor;
 @property (nonatomic, strong) UIColor *textColor;
 @property (nonatomic, strong) UIColor *buttonColor;
