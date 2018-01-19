@@ -7,11 +7,15 @@
 //
 
 #import "NumberGame.h"
+#import "CustomColorsViewController.h"
 
 @interface NumberGame ()
+
 @property (weak, nonatomic) IBOutlet UITextView *textView;
 @property (weak, nonatomic) IBOutlet UILabel *sliderLabel;
 @property (weak, nonatomic) IBOutlet UISlider *sliderValue;
+@property (weak, nonatomic) IBOutlet UIButton *guess;
+@property (nonatomic) int computerNumber;
 
 @end
 
@@ -20,9 +24,21 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
+    UIColor *check = [CustomColorsViewController bgColor];
+    if (check) {
+        [self loadCustomColors];
+    }
+    self.computerNumber = arc4random_uniform(101);
     [self resetSlider];
-    
+}
+
+-(void)loadCustomColors {
+    self.view.backgroundColor = [CustomColorsViewController bgColor];
+    self.sliderLabel.textColor = [CustomColorsViewController labelColor];
+    self.textView.textColor = [CustomColorsViewController textColor];
+    self.textView.backgroundColor = [CustomColorsViewController bgColor];
+    self.guess.tintColor = [CustomColorsViewController buttonColor];
+    self.sliderValue.tintColor = [CustomColorsViewController labelColor];
 }
 
 //Reset slider value to 50
@@ -33,7 +49,7 @@
 //Get slider value, show in label
 - (IBAction)sliderChanged:(id)sender {
     //Round slider value
-    int value = roundl(self.sliderValue.value);
+    int value = (int) (self.sliderValue.value);
 
     self.sliderLabel.text = [NSString stringWithFormat:@"%d", value];
 }
@@ -45,33 +61,35 @@
 }
 
 - (void)guessNumber {
-    int computerNumber = arc4random_uniform(101);
+    //int computerNumber = arc4random_uniform(101);
+    int userGuess = (int)(self.sliderValue.value);
     
     //For testing the game
-    NSLog(@"Computer guess %d", computerNumber);
+    NSLog(@"Computer guess %d", self.computerNumber);
     
-    if (computerNumber < self.sliderValue.value) {
-        //Too high
-        NSLog(@"Too high!");
+   if (self.computerNumber < (int) self.sliderValue.value) {
+            //Too high
+            NSLog(@"Too high!");
         
-        //Set textview
-        self.textView.text =
-        [NSString stringWithFormat:@"Oh no, that's too high. Why not guess again?"];
+            //Set textview
+            self.textView.text =
+            [NSString stringWithFormat:@"Oh no, that's too high. Why not guess again?"];
+            userGuess = (int) self.sliderValue.value;
+    } else if (self.computerNumber > self.sliderValue.value) {
+            //Too low
+            NSLog(@"Too low!");
         
-    } else if (computerNumber > self.sliderValue.value) {
-        //Too low
-        NSLog(@"Too low!");
-        
-        self.textView.text =
-        [NSString stringWithFormat:@"That's a bit too low. Try again!"];
+            self.textView.text =
+            [NSString stringWithFormat:@"That's a bit too low. Try again!"];
+            userGuess = (int) self.sliderValue.value;
     } else {
         //Right!
         NSLog(@"Right!");
-        
         self.textView.text =
         [NSString stringWithFormat:@"Wow, I can't believe you actually guessed it!"];
     }
 }
+    
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

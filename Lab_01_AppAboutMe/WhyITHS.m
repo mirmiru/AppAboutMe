@@ -7,8 +7,13 @@
 //
 
 #import "WhyITHS.h"
+#import "CustomColorsViewController.h"
 
 @interface WhyITHS ()
+@property (weak, nonatomic) IBOutlet UILabel *label1;
+@property (weak, nonatomic) IBOutlet UILabel *label2;
+@property (weak, nonatomic) IBOutlet UITextView *textView1;
+@property (weak, nonatomic) IBOutlet UITextView *textView2;
 
 @end
 
@@ -17,6 +22,20 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    UIColor *check = [CustomColorsViewController bgColor];
+    if (check) {
+        [self loadCustomColors];
+    }
+}
+
+-(void)loadCustomColors {
+    self.view.backgroundColor = [CustomColorsViewController bgColor];
+    self.label1.textColor = [CustomColorsViewController labelColor];
+    self.label2.textColor = [CustomColorsViewController labelColor];
+    self.textView1.textColor = [CustomColorsViewController textColor];
+    self.textView1.backgroundColor = [CustomColorsViewController bgColor];
+    self.textView2.textColor = [CustomColorsViewController textColor];
+    self.textView2.backgroundColor = [CustomColorsViewController bgColor];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -27,6 +27,10 @@ UIColor *labelColor;
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    UIColor *check = [CustomColorsViewController bgColor];
+    if (check) {
+        [self loadCustomColors];
+    }
 }
 
 + (UIColor*)bgColor {
@@ -49,14 +53,23 @@ UIColor *labelColor;
     return labelColor;
 }
 
+-(void)loadCustomColors {
+    self.view.backgroundColor = [CustomColorsViewController bgColor];
+    self.label.textColor = [CustomColorsViewController labelColor];
+    self.textView.textColor = [CustomColorsViewController textColor];
+    self.button1.tintColor = [CustomColorsViewController buttonColor];
+    self.button2.tintColor = [CustomColorsViewController buttonColor];
+    self.textView.backgroundColor = [CustomColorsViewController bgColor];
+}
+
 - (IBAction)monochromeColorsButton:(id)sender {
     [self setMonochromeColor];
     
     self.view.backgroundColor = bgColor;
-    self.button1.tintColor = self.buttonColor;
-    self.button2.tintColor = self.buttonColor;
-    self.textView.backgroundColor = self.bgColor;
-    self.label.textColor = self.labelColor;
+    self.button1.tintColor = buttonColor;
+    self.button2.tintColor = buttonColor;
+    self.textView.backgroundColor = bgColor;
+    self.label.textColor = labelColor;
 }
 
 - (IBAction)colorfulColorsButton:(id)sender {

@@ -7,8 +7,15 @@
 //
 
 #import "Interests.h"
+#import "CustomColorsViewController.h"
 
 @interface Interests ()
+@property (weak, nonatomic) IBOutlet UILabel *languages;
+@property (weak, nonatomic) IBOutlet UILabel *cooking;
+@property (weak, nonatomic) IBOutlet UILabel *meditation;
+@property (weak, nonatomic) IBOutlet UIImageView *hindiImage;
+@property (weak, nonatomic) IBOutlet UIImageView *cookingImage;
+@property (weak, nonatomic) IBOutlet UIImageView *meditationImage;
 
 @end
 
@@ -17,6 +24,20 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    UIColor *check = [CustomColorsViewController bgColor];
+    if (check) {
+        [self loadCustomColors];
+    }
+}
+
+-(void)loadCustomColors {
+    self.view.backgroundColor = [CustomColorsViewController bgColor];
+    self.languages.textColor = [CustomColorsViewController labelColor];
+    self.cooking.textColor = [CustomColorsViewController labelColor];
+    self.meditation.textColor = [CustomColorsViewController labelColor];
+    self.hindiImage.backgroundColor = [CustomColorsViewController bgColor];
+    self.cookingImage.backgroundColor = [CustomColorsViewController bgColor];
+    self.meditationImage.backgroundColor = [CustomColorsViewController bgColor];
 }
 
 - (void)didReceiveMemoryWarning {

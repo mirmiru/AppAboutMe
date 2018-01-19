@@ -7,8 +7,11 @@
 //
 
 #import "About.h"
+#import "CustomColorsViewController.h"
 
 @interface About ()
+@property (weak, nonatomic) IBOutlet UILabel *label;
+@property (weak, nonatomic) IBOutlet UITextView *textView;
 
 @end
 
@@ -17,6 +20,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    UIColor *check = [CustomColorsViewController bgColor];
+    if (check) {
+        [self loadCustomColors];
+    }
+}
+
+-(void)loadCustomColors {
+    self.view.backgroundColor = [CustomColorsViewController bgColor];
+    self.label.textColor = [CustomColorsViewController labelColor];
+    self.textView.textColor = [CustomColorsViewController textColor];
+    self.textView.backgroundColor = [CustomColorsViewController bgColor];
 }
 
 - (void)didReceiveMemoryWarning {
