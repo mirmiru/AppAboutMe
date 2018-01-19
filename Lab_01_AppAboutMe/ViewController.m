@@ -9,46 +9,49 @@
 #import "ViewController.h"
 #import "CustomColorsViewController.h"
 
-
-
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *navigation;
 @property (weak, nonatomic) IBOutlet UILabel *game;
+@property (weak, nonatomic) IBOutlet UILabel *name;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UIButton *about;
-@property (weak, nonatomic) IBOutlet UIButton *interests;
 @property (weak, nonatomic) IBOutlet UIButton *whyITHS;
 @property (weak, nonatomic) IBOutlet UIButton *numberGame;
 @property (weak, nonatomic) IBOutlet UIButton *colors;
+@property (weak, nonatomic) IBOutlet UIButton *interests;
 
 @end
 
-@implementation ViewController {
-    BOOL firstLoad;
-}
+@implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    NSLog(@"FIRST LOAD");
-    firstLoad = YES;
+    
+    UIColor *check = [CustomColorsViewController bgColor];
+    if (check) {
+        [self loadCustomColors];
+    }
 }
 
 -(void)viewWillAppear:(BOOL)animated {
-    
-    [super viewWillAppear:animated];
-    if (!firstLoad)
+    //[super viewWillAppear:animated];
+    UIColor *check = [CustomColorsViewController bgColor];
+    if (check)
         [self loadCustomColors];
-    firstLoad = NO;
-    NSLog(@"SECOND LOAD");
 }
 
 -(void)loadCustomColors {
     self.view.backgroundColor = [CustomColorsViewController bgColor];
     self.navigation.textColor = [CustomColorsViewController labelColor];
     self.game.textColor = [CustomColorsViewController labelColor];
+    self.name.textColor = [CustomColorsViewController labelColor];
     self.imageView.backgroundColor = [CustomColorsViewController bgColor];
     self.about.tintColor = [CustomColorsViewController buttonColor];
+    self.interests.tintColor = [CustomColorsViewController buttonColor];
+    self.whyITHS.tintColor = [CustomColorsViewController buttonColor];
+    self.numberGame.tintColor = [CustomColorsViewController buttonColor];
+    self.colors.tintColor = [CustomColorsViewController buttonColor];
 }
 
 - (void)didReceiveMemoryWarning {

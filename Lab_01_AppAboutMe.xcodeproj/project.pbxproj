@@ -7,7 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A525EF11201124A9002D4930 /* About.m in Sources */ = {isa = PBXBuildFile; fileRef = A525EF10201124A9002D4930 /* About.m */; };
+		A525EF1420112B2C002D4930 /* Interests.m in Sources */ = {isa = PBXBuildFile; fileRef = A525EF1320112B2C002D4930 /* Interests.m */; };
+		A525EF17201136D9002D4930 /* WhyITHS.m in Sources */ = {isa = PBXBuildFile; fileRef = A525EF16201136D9002D4930 /* WhyITHS.m */; };
 		A5422EDE200CF2A1005F9F7E /* NumberGame.m in Sources */ = {isa = PBXBuildFile; fileRef = A5422EDD200CF2A1005F9F7E /* NumberGame.m */; };
+		A5CF10D7200FB05B00A06168 /* CustomColorsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5CF10D6200FB05B00A06168 /* CustomColorsViewController.m */; };
 		A5D0FC3420093B34008EAD3C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A5D0FC3320093B34008EAD3C /* AppDelegate.m */; };
 		A5D0FC3720093B34008EAD3C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5D0FC3620093B34008EAD3C /* ViewController.m */; };
 		A5D0FC3A20093B34008EAD3C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5D0FC3820093B34008EAD3C /* Main.storyboard */; };
@@ -17,8 +21,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A525EF0F201124A9002D4930 /* About.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = About.h; sourceTree = "<group>"; };
+		A525EF10201124A9002D4930 /* About.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = About.m; sourceTree = "<group>"; };
+		A525EF1220112B2C002D4930 /* Interests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Interests.h; sourceTree = "<group>"; };
+		A525EF1320112B2C002D4930 /* Interests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Interests.m; sourceTree = "<group>"; };
+		A525EF15201136D9002D4930 /* WhyITHS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WhyITHS.h; sourceTree = "<group>"; };
+		A525EF16201136D9002D4930 /* WhyITHS.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WhyITHS.m; sourceTree = "<group>"; };
 		A5422EDC200CF2A1005F9F7E /* NumberGame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NumberGame.h; sourceTree = "<group>"; };
 		A5422EDD200CF2A1005F9F7E /* NumberGame.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NumberGame.m; sourceTree = "<group>"; };
+		A5CF10D5200FB05B00A06168 /* CustomColorsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomColorsViewController.h; sourceTree = "<group>"; };
+		A5CF10D6200FB05B00A06168 /* CustomColorsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomColorsViewController.m; sourceTree = "<group>"; };
 		A5D0FC2F20093B34008EAD3C /* Lab_01_AppAboutMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lab_01_AppAboutMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5D0FC3220093B34008EAD3C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A5D0FC3320093B34008EAD3C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -65,9 +77,17 @@
 				A5D0FC3320093B34008EAD3C /* AppDelegate.m */,
 				A5D0FC3520093B34008EAD3C /* ViewController.h */,
 				A5D0FC3620093B34008EAD3C /* ViewController.m */,
+				A5CF10D5200FB05B00A06168 /* CustomColorsViewController.h */,
+				A5CF10D6200FB05B00A06168 /* CustomColorsViewController.m */,
 				A5422EDC200CF2A1005F9F7E /* NumberGame.h */,
+				A525EF0F201124A9002D4930 /* About.h */,
+				A525EF10201124A9002D4930 /* About.m */,
 				A5422EDD200CF2A1005F9F7E /* NumberGame.m */,
 				A5D0FC3820093B34008EAD3C /* Main.storyboard */,
+				A525EF1220112B2C002D4930 /* Interests.h */,
+				A525EF1320112B2C002D4930 /* Interests.m */,
+				A525EF15201136D9002D4930 /* WhyITHS.h */,
+				A525EF16201136D9002D4930 /* WhyITHS.m */,
 				A5D0FC3B20093B34008EAD3C /* Assets.xcassets */,
 				A5D0FC3D20093B34008EAD3C /* LaunchScreen.storyboard */,
 				A5D0FC4020093B34008EAD3C /* Info.plist */,
@@ -147,8 +167,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A525EF1420112B2C002D4930 /* Interests.m in Sources */,
+				A5CF10D7200FB05B00A06168 /* CustomColorsViewController.m in Sources */,
 				A5D0FC3720093B34008EAD3C /* ViewController.m in Sources */,
 				A5D0FC4220093B34008EAD3C /* main.m in Sources */,
+				A525EF17201136D9002D4930 /* WhyITHS.m in Sources */,
+				A525EF11201124A9002D4930 /* About.m in Sources */,
 				A5422EDE200CF2A1005F9F7E /* NumberGame.m in Sources */,
 				A5D0FC3420093B34008EAD3C /* AppDelegate.m in Sources */,
 			);

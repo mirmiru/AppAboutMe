@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="IMG_20170727_084428_-196615973_thumb" translatesAutoresizingMaskIntoConstraints="NO" id="uZQ-4g-xhj">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="mainImage" translatesAutoresizingMaskIntoConstraints="NO" id="uZQ-4g-xhj">
                                 <rect key="frame" x="0.0" y="130" width="375" height="287"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -29,17 +29,6 @@
                                 <state key="normal" title="About me"/>
                                 <connections>
                                     <segue destination="B6Q-I5-hBp" kind="show" id="fPD-nr-eKw"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="98M-od-qi6">
-                                <rect key="frame" x="137" y="475" width="101" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Interests">
-                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <segue destination="hzg-uj-Yub" kind="show" id="CJJ-WI-GqD"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yZg-mH-DEg">
@@ -90,17 +79,30 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TMH-D6-fR6">
+                                <rect key="frame" x="149" y="475" width="77" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Interests"/>
+                                <connections>
+                                    <segue destination="hzg-uj-Yub" kind="show" id="let-7q-tsL"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="App About Me!" id="hU2-Gy-def"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.cornerRadius number 2" value="YES"/>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="about" destination="A2r-cJ-GqU" id="OoA-xl-7Tp"/>
                         <outlet property="colors" destination="Jas-bp-T0n" id="krz-Lo-32V"/>
                         <outlet property="game" destination="RTu-1X-UKk" id="VS1-fs-QmJ"/>
                         <outlet property="imageView" destination="uZQ-4g-xhj" id="SDj-QI-5eG"/>
-                        <outlet property="interests" destination="98M-od-qi6" id="taT-VT-OhU"/>
+                        <outlet property="interests" destination="TMH-D6-fR6" id="9EZ-cO-fj6"/>
+                        <outlet property="name" destination="YLe-f3-vhb" id="YrF-jn-LLF"/>
                         <outlet property="navigation" destination="gCi-fk-zQR" id="1Cs-D0-0s6"/>
                         <outlet property="numberGame" destination="7dh-NX-OdY" id="Ict-et-UG8"/>
                         <outlet property="whyITHS" destination="yZg-mH-DEg" id="yfI-cy-xkb"/>
@@ -155,7 +157,7 @@
                         <viewLayoutGuide key="safeArea" id="I6n-Lc-Jyp"/>
                     </view>
                     <connections>
-                        <outlet property="button1" destination="vxb-SU-VDq" id="5RQ-XQ-E3H"/>
+                        <outlet property="button1" destination="vxb-SU-VDq" id="WHI-gw-uEh"/>
                         <outlet property="button2" destination="BEM-ca-cDy" id="oHR-IS-E8k"/>
                         <outlet property="label" destination="QlS-Wt-Zyx" id="Pio-4b-A17"/>
                         <outlet property="textView" destination="lZJ-UJ-uXM" id="LYY-I6-IPj"/>
@@ -168,17 +170,38 @@
         <!--About Me-->
         <scene sceneID="4hK-M8-RQf">
             <objects>
-                <viewController title="About Me" id="B6Q-I5-hBp" sceneMemberID="viewController">
+                <viewController title="About Me" id="B6Q-I5-hBp" customClass="About" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cQ6-Ti-CDg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nuggets of information:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gVa-vw-Ljz">
+                                <rect key="frame" x="16" y="103" width="343" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="uSI-gt-jfT">
+                                <rect key="frame" x="16" y="161" width="343" height="344"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <mutableString key="text">- Born in Helsinki, Finland.  - Personality type: INFJ.  - Languages: Swedish, Finnish, English, Japanese, some Korean.  - Wants to be vegan but has trouble giving up cheese.  - Works part-time as a translator.  - Fears spiders but likes snakes.  - Never wears pants, only dresses/skirts.</mutableString>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="j5g-wW-57v"/>
                     </view>
+                    <connections>
+                        <outlet property="label" destination="gVa-vw-Ljz" id="JjI-Tm-NgD"/>
+                        <outlet property="textView" destination="uSI-gt-jfT" id="8pI-cB-JHJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="30Z-2y-8ZY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="926.5" y="-468.5"/>
+            <point key="canvasLocation" x="925.60000000000002" y="-469.1154422788606"/>
         </scene>
         <!--Number Game-->
         <scene sceneID="UhX-9I-Pby">
@@ -227,6 +250,7 @@
                         <viewLayoutGuide key="safeArea" id="Plo-z4-3M3"/>
                     </view>
                     <connections>
+                        <outlet property="guess" destination="UV6-Fh-bWg" id="ESl-7V-CUg"/>
                         <outlet property="sliderLabel" destination="GLe-hn-L8d" id="FoU-cb-62V"/>
                         <outlet property="sliderValue" destination="6ma-eT-OG0" id="7Am-rn-umD"/>
                         <outlet property="textView" destination="tVw-uY-cvI" id="Vgv-WE-a18"/>
@@ -239,32 +263,112 @@
         <!--Why ITHS-->
         <scene sceneID="qIJ-yf-BEJ">
             <objects>
-                <viewController title="Why ITHS" id="Gwn-7A-uhE" sceneMemberID="viewController">
+                <viewController title="Why ITHS" id="Gwn-7A-uhE" customClass="WhyITHS" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2xD-eR-jdz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="eFk-SG-zYi">
+                                <rect key="frame" x="16" y="157" width="343" height="242"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">- I wanted more concrete skills.  - I like creating things and seeing immediate results.  - Better job market.  - Better international opportunities - code is the same everywhere in the world!</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Why app development?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OXc-Ke-XfJ">
+                                <rect key="frame" x="16" y="116" width="343" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Future plans" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oen-Uz-fHE">
+                                <rect key="frame" x="16" y="430" width="343" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="- Hopefully get a job post-graduation in the Skåne region." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="RX9-ty-gA0">
+                                <rect key="frame" x="16" y="470" width="343" height="68"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="XBQ-Ug-O0a"/>
                     </view>
+                    <connections>
+                        <outlet property="label1" destination="OXc-Ke-XfJ" id="R8h-IZ-olR"/>
+                        <outlet property="label2" destination="Oen-Uz-fHE" id="Kz6-GH-vtB"/>
+                        <outlet property="textView1" destination="eFk-SG-zYi" id="LA8-jW-rZi"/>
+                        <outlet property="textView2" destination="RX9-ty-gA0" id="mav-z0-Fdw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O5q-hX-pQL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="343" y="603"/>
+            <point key="canvasLocation" x="341.60000000000002" y="602.24887556221893"/>
         </scene>
         <!--Interests-->
         <scene sceneID="l4W-rZ-3mr">
             <objects>
-                <viewController title="Interests" id="hzg-uj-Yub" sceneMemberID="viewController">
+                <viewController title="Interests" id="hzg-uj-Yub" customClass="Interests" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7pq-96-SCT">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Languages - Currently learning Hindi!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sfL-3N-nWb">
+                                <rect key="frame" x="16" y="238" width="343" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="meditation" translatesAutoresizingMaskIntoConstraints="NO" id="7Z3-Zh-u2l">
+                                <rect key="frame" x="66" y="474" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="New interest for 2018: Meditation" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BLT-NP-wT3">
+                                <rect key="frame" x="16" y="610" width="343" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="hindi" translatesAutoresizingMaskIntoConstraints="NO" id="OAu-8B-dUy">
+                                <rect key="frame" x="67" y="102" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Cooking (and eating...)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kgm-mc-DQm">
+                                <rect key="frame" x="16" y="426" width="343" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cooking" translatesAutoresizingMaskIntoConstraints="NO" id="EsR-Do-RLF">
+                                <rect key="frame" x="66" y="290" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="53G-Qx-Eja"/>
                     </view>
+                    <connections>
+                        <outlet property="cooking" destination="Kgm-mc-DQm" id="xGQ-A7-AgS"/>
+                        <outlet property="cookingImage" destination="EsR-Do-RLF" id="1wN-sO-TdZ"/>
+                        <outlet property="hindiImage" destination="OAu-8B-dUy" id="Rzc-Dx-vRP"/>
+                        <outlet property="languages" destination="sfL-3N-nWb" id="cWD-ys-OHh"/>
+                        <outlet property="meditation" destination="BLT-NP-wT3" id="h6Z-2F-hlp"/>
+                        <outlet property="meditationImage" destination="7Z3-Zh-u2l" id="y9t-3p-u5a"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KQ2-V2-NCh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1687.5" y="241.5"/>
+            <point key="canvasLocation" x="1687.2" y="240.62968515742131"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="cFv-Tc-rmu">
@@ -286,7 +390,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="IMG_20170727_084428_-196615973_thumb" width="540" height="540"/>
+        <image name="cooking" width="500" height="350"/>
+        <image name="hindi" width="500" height="350"/>
+        <image name="mainImage" width="767" height="767"/>
+        <image name="meditation" width="500" height="350"/>
         <image name="numbers" width="640" height="426"/>
     </resources>
 </document>
